@@ -16,15 +16,26 @@ module.exports.hello = async (event, context, callback) => {
 
   // console.log(event.pathParameters);
 
-  const reply = `Hello ${event.pathParameters.name}`;
+// TESTING A NEWLY CREATED ENDPOINT 
+  // const reply = `Hello ${event.pathParameters.name}`;
 
-  const response = {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: reply
-    })
-  };
+  // const response = {
+  //   statusCode: 200,
+  //   body: JSON.stringify({
+  //     message: reply
+  //   })
+  // };
 
-  callback(null, response);
+  // callback(null, response);
+
+  // CRON JOBS - creating a basic cron job that prints a message everytime 
   
+  const now = new Date();
+
+  const message = `The time is ${now}`;
+
+  console.log(message);
+
+  callback(null, message);
+
 };
